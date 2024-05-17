@@ -14,7 +14,19 @@ const moment = require('moment');
 
 
 //  //post form route
+ router.get("/form", async (req, res) => {
+   try {
+    const field = await FormModel.find();
+      await field.save();
 
+      res.redirect("/dataForm");
+    
+   } catch (error) {
+    res.status(400).send("Sorry something wrong!");
+      console.log("error registering field...", error );
+    
+   }
+ });
 
 
  module.exports = router;

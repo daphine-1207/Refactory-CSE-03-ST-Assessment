@@ -1,6 +1,6 @@
 let firstName = document.getElementById('firstName'); //for input tag id
 let lastName = document.getElementById('lastName'); //for input tag id
-let address = document.getElementById("address");
+let residence = document.getElementById("residence");
 let gender = document.getElementsByName("gender");
 
 
@@ -8,7 +8,7 @@ let gender = document.getElementsByName("gender");
 
 let firstNameError = document.getElementById('firstNameError'); //for small tag id
 let lastNameError = document.getElementById('lastNameError'); //for small tag id
-let addressError = document.getElementById("addressError");
+let residenceError = document.getElementById("residenceError");
 let genderError = document.getElementById("genderError");
 
 

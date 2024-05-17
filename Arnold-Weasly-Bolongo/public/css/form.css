@@ -1,10 +1,10 @@
 
-body {
-    font-family: 'Agency FB', Tahoma, Arial, Calibri, sans-serif;
+.container{
+    font-family: Agency FB, Tahoma, Arial, Calibri, sans-serif;
 }
-
 .split-container {
     display: flex;
+    border: 1px solid green;
 }
 .left-side, .right-side {
     flex: 1;
