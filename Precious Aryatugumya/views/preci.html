@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation with Layout</title>
+    <style>
+      body {
+        font-family: Arial;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+
+      .main-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 20px;
+        border: 2px solid #0e680b85;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+      }
+
+      .form-row > div {
+        flex: 1;
+        min-width: 200px;
+        margin: 5px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        color: #218838;
+      }
+
+      input[type="text"],
+      input[type="date"],
+      select {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        border: 1px solid #f80202;
+        border-radius: 4px;
+      }
+
+      .error {
+        display: none;
+        color: red;
+        font-size: 0.9em;
+      }
+
+      .terms {
+        display: flex;
+        align-items: center;
+      }
+
+      .terms label {
+        margin-left: 5px;
+      }
+
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #218838;
+      }
+      .form-image {
+      max-width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <img src="/Assets/Images/1. Form on load.PNG on load" alt="Form Image" class="form-image" />
+    <div class="container">
+      <h2>STUDENT APPLICATION FORM</h2>
+      <form id="registrationForm">
+        <div class="form-row">
+          <div>
+            <label for="firstName">First name</label>
+            <input type="text" id="firstName" name="firstName" />
+            <span class="error" id="firstNameError">fill in name!</span>
+          </div>
+          <div>
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" name="lastName" />
+            <span class="error" id="lastNameError">fill in name!</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="course">Course</label>
+            <select id="course" name="course">
+              <option value="">-select-</option>
+              <option value="Course1">Certificate in Healty Science</option>
+              <option value="Course2">Certificate in Applied Technology</option>
+              <option value="Course2">
+                Bachelor of Information Technology
+              </option>
+              <option value="Course2">Bachelor in Business Technology</option>
+              <option value="Course2">Master of Public Health</option>
+            </select>
+            <span class="error" id="courseError"
+              >Please select a valid state.</span
+            >
+          </div>
+          <div>
+            <label for="entryScheme">Entry Scheme</label>
+            <select id="entryScheme" name="entryScheme">
+              <option value="">-select-</option>
+              <option value="Scheme1">A-Level certificate</option>
+              <option value="Scheme2">Adult/Mature Learning</option>
+              <option value="Scheme2">Certificate</option>
+              <option value="Scheme2">Diploma</option>
+              <option value="Scheme2">Bachelors</option>
+            </select>
+            <span class="error" id="entrySchemeError"
+              >Please select a valid state.</span
+            >
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="intake">Intake</label>
+            <select id="intake" name="intake">
+              <option value="">-select-</option>
+              <option value="Intake1">January Intake</option>
+              <option value="Intake2">May Intake</option>
+              <option value="Intake2">August Intake</option>
+            </select>
+            <span class="error" id="intakeError"
+              >Please select a valid state.</span
+            >
+          </div>
+          <div>
+            <label for="sponsorship">Sponsorship</label>
+            <select id="sponsorship" name="sponsorship">
+              <option value="">-select-</option>
+              <option value="Sponsor1">Private</option>
+              <option value="Sponsor2">Government</option>
+              <option value="Sponsor2">Bursary</option>
+            </select>
+            <span class="error" id="sponsorshipError"
+              >Please select a valid state.</span
+            >
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+              <option value="">-select-</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+            <span class="error" id="genderError"
+              >Please select a valid state.</span
+            >
+          </div>
+          <div>
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" />
+            <span class="error" id="dobError"
+              >Please provide a valid date.</span
+            >
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="residence">Residence</label>
+            <input type="text" id="residence" name="residence" />
+            <span class="error" id="residenceError"
+              >Please provide a valid zip.</span
+            >
+          </div>
+        </div>
+        <div class="form-row terms">
+          <input type="checkbox" id="agreeTerms" name="agreeTerms" />
+          <label for="agreeTerms">Agree to terms and conditions</label>
+          <span class="error" id="agreeTermsError"
+            >You must agree before submitting.</span
+          >
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (event) {
+          let valid = true;
+
+          // Validate first name
+          const firstName = document.getElementById("firstName").value;
+          if (!firstName) {
+            document.getElementById("firstNameError").style.display = "inline";
+            valid = false;
+          } else {
+            document.getElementById("firstNameError").style.display = "none";
+          }
+
+          // Validate last name
+          const lastName = document.getElementById("lastName").value;
+          if (!lastName) {
+            document.getElementById("lastNameError").style.display = "inline";
+            valid = false;
+          } else {
+            document.getElementById("lastNameError").style.display = "none";
+          }
+
+          // Validate course
+          const course = document.getElementById("course").value;
+          if (!course) {
+            document.getElementById("courseError").style.display = "inline";
+            valid = false;
+          } else {
+            document.getElementById("courseError").style.display = "none";
+          }
+
+          // Validate entry scheme
+          const entryScheme = document.getElementById("entryScheme").value;
+          if (!entryScheme) {
+            document.getElementById("entrySchemeError").style.display =
+              "inline";
+            valid = false;
+          } else {
+            document.getElementById("entrySchemeError").style.display = "none";
+          }
+
+          // Validate intake
+          const intake = document.getElementById("intake").value;
+          if (!intake) {
+            document.getElementById("intakeError").style.display = "inline";
+            valid = false;
+          } else {
+            document.getElementById("intakeError").style.display = "none";
+          }
+
+          // Validate sponsorship
+          const sponsorship = document.getElementById("sponsorship").value;
+          if (!sponsorship) {
+            document.getElementById("sponsorshipError").style.display =
+              "inline";
+            valid = false;
+          } else {
+            document.getElementById("sponsorshipError").style.display = "none";
+          }
+
+          // Validate gender
+          const gender = document.getElementById("gender").value;
+          if (!gender) {
+            document.getElementById("genderError").style.display = "inline";
+            valid = false;
+          } else {
+            document.getElementById("genderError").style.display = "none";
+          }
+
+          // Validate date of birth
+          const dob = document.getElementById("dob").value;
+          if (!dob) {
+            document.getElementById("dobError").style.display = "inline";
+            valid = false;
+          } else {
+            document.getElementById("dobError").style.display = "none";
+          }
+
+          // Validate residence (assuming zip code)
+          const residence = document.getElementById("residence").value;
+          const zipCodePattern = /^\d{5}(-\d{4})?$/; // US ZIP code pattern
+          if (!zipCodePattern.test(residence)) {
+            document.getElementById("residenceError").style.display = "inline";
+            valid = false;
+          } else {
+            document.getElementById("residenceError").style.display = "none";
+          }
+
+          // Validate terms and conditions agreement
+          const agreeTerms = document.getElementById("agreeTerms").checked;
+          if (!agreeTerms) {
+            document.getElementById("agreeTermsError").style.display = "inline";
+            valid = false;
+          } else {
+            document.getElementById("agreeTermsError").style.display = "none";
+          }
+
+          if (!valid) {
+            event.preventDefault();
+          }
+        });
+    </script>
+  </body>
+</html>
