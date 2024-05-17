@@ -137,8 +137,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 5px;
+            padding: 10px;
             border: solid 1px green;
+            margin-bottom: 30px;
             
         }
 
@@ -173,13 +174,12 @@
              display:flex; 
             flex-direction: row; 
         }
-        body{
-            font-family: Agency FB, Tahoma, Arial, Calibri;
-        }
+         
         .form-field {
             display: inline-block;
             width: 45%;
             margin: 10px;
+            font-style: Agency FB;
         }
        
      
@@ -206,10 +206,11 @@
     <section class="container">
         <div class="row">
             <div class="col-md-6">
-                <img src="{% static 'images/1. Form on load.PNG' %}" alt="badge" class="img-fluid">
+                <img style="height: 750px;" src="{% static 'images/1. Form on load.PNG' %}" alt="badge" class="img-fluid">
             </div>
             <div class="col-md-6">
                 <h1 style="text-align:center; color:#0C5F52;">STUDENT APPLICATION FORM</h1>
+                <center>
                 {% if messages %}
                 <ul class="messages">
                     {% for message in messages %}
