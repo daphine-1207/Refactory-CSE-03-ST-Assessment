@@ -10,6 +10,7 @@
     <style>
         body{
             font-family: Agency FB, Tahoma, Arial, Calibri;
+            color: #0C5F52;
         }
         .form-field {
             display: inline-block;
@@ -21,6 +22,12 @@
         }
         .form-field input:invalid{
             border: 2px solid red;
+        }
+        .form-field select:invalid{
+            border: 1 px solid red;
+        }
+        .form-field select:valid{
+            border: 2px solid green;
         }
         .form-field.a{
             display:flex;
