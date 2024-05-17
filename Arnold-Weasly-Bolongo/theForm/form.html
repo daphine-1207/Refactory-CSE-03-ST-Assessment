@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENQ KYC FORM</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="../theForm/form.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="split-container">
+            <div class="left-side">
+                <img src="../Assets/Images/1. Form on load.PNG" alt="Your Image">
+            </div>
+            <div class="right-side">
+                <h2 class="text-center text-success mb-4">STUDENT APPLICATION FORM</h2>
+                <form id="kycForm">
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                                <p></p>
+                                <label for="course" class="form-label">Course</label>
+                                <select id="course" name="course" class="form-control">
+                                    <option value="">Select</option>
+                                    <option value="male">Information Technology</option>
+                    
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                                <p></p>
+                                <label for="entryScheme" class="form-label">Entry Scheme</label>
+                                <select id="entryScheme" name="entryScheme" class="form-control">
+                                    <option value="">Select</option>
+                                    <option value="male">A-Level</option>
+                                  
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col">
+                                <label for="intake" class="form-label">Intake</label>
+                                <select id="intake" name="intake" class="form-control">
+                                    <option value="">Select</option>
+                                    <option value="male">May Intake</option>
+                                  
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="sponsorship" class="form-label">Sponsorship</label>
+                                <select id="sponsorship" name="sponsorship" class="form-control">
+                                    <option value="">Select</option>
+                                    <option value="male">Private</option>
+                              
+                                </select>
+                            </div>
+                        </div>
+                        <p></p>
+                        <label for="gender" class="form-label">Gender</label>
+                        <div class="form-check form-control form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                            <label class="form-check-label" for="male">Male</label>
+                        </div>
+                        <div class="form-check form-control form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                            <label class="form-check-label" for="female">Female</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col">
+                                <label for="date" class="form-label">Date Of Birth</label>
+                                <input type="date" class="form-control" id="date" placeholder="(YYYY/MM/DD)">
+                            </div>
+                            <div class="col">
+                                <label for="residence" class="form-label">Residence</label>
+                                <input type="text" class="form-control" id="residence" placeholder="Residence">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-success btn-lg">Submit</button>
+                    </div>
+                </form>
+                <div id="alertPlaceholder"></div>
+            </div>
+        </div>
+    </div>
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="../theForm/form.js"></script>
+</html>
