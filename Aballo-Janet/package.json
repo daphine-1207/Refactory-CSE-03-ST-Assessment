@@ -4,7 +4,7 @@
   "description": "This is my hello world project",
   "main": "index.js",
   "scripts": {
-    "custom-start": "node index.js"
+    "start": "nodemon index.js"
   },
   "keywords": [
     "My",
