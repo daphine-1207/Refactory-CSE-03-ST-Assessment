@@ -1,0 +1,40 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+input,
+textarea {
+    font-family:
+     Agency FB,
+    Tahoma,
+    Arial,
+    Calibri;
+}
+
+.main-container{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+}
+.form-container{
+    padding: 2.3rem 2.2rem;
+    z-index: 10;
+    overflow: hidden;
+    position: relative;
+}
+h1{
+    color: #0C5F52;
+}
+label{
+    color: #0C5F52;
+    font-size:25px ;
+}
+button{
+    color: #0C5F52;
+}
