@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Application Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            padding: 20px;
+            font-family: 'Agency FB', Tahoma, Arial, Calibri, sans-serif;
+        }
+
+        .image-container {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin-left: auto;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            color: #0C5F52; /* CIU deep green */
+            margin-bottom: 5px;
+        }
+
+        label.required:after {
+           content: '*';
+           color: #FF0000;
+        }
+
+
+        input[type="text"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .form-pair {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .form-pair .form-group {
+            flex: 1;
+        }
+
+        .submit-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        button[type="submit"] {
+            background-color: #0C5F52; /* CIU deep green */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: darkgreen;
+        }
+
+        .messages {
+            margin-bottom: 20px;
+            color: #00B050; /* Green color for success */
+        }
+
+        .errorlist {
+            color: #FF0000; /* Red color for errors */
+        }
+
+        .gender-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .gender-container label {
+            margin-right: 10px;
+        }
+
+        .gender-container input {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="{% static 'images/pic1.PNG' %}" alt="Description of the image">
+    </div>
+
+    <div class="form-container">
+        <h1 style="color:#0C5F52;">Student Application Form</h1>
+
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-pair">
+                <div class="form-group">
+                    <label class="required">{{ form.first_name.label_tag }}</label> {{ form.first_name }}
+                </div>
+                <div class="form-group">
+                    <label class="required">{{ form.last_name.label_tag }}</label> {{ form.last_name }}
+                </div>
+            </div>
+            
+            <div class="form-pair">
+                <div class="form-group">
+                    <label class="required">{{ form.course.label_tag }}</label> {{ form.course }}
+                </div>
+                <div class="form-group">
+                    <label class="required">{{ form.entryscheme.label_tag }}</label> {{ form.entryscheme }}
+                </div>
+            </div>
+            
+            <div class="form-pair">
+                <div class="form-group">
+                    <label class="required">{{ form.intake.label_tag }}</label> {{ form.intake }}
+                </div>
+                <div class="form-group">
+                    <label class="required">{{ form.sponsorship.label_tag }}</label> {{ form.sponsorship }}
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="required">Gender</label>
+                <div class="gender-container">
+                    {{ form.gender }}
+                </div>
+            </div>
+            
+            <div class="form-pair">
+                <div class="form-group">
+                    <label class="required">{{ form.date_of_birth.label_tag }}</label> {{ form.date_of_birth }}
+                </div>
+                <div class="form-group">
+                    <label class="required">{{ form.residence.label_tag }}</label> {{ form.residence }}
+                </div>
+            </div>
+            
+          
+
+            <div class="submit-container">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
