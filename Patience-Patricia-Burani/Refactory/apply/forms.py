@@ -48,7 +48,7 @@ class RegisterForm(forms.ModelForm):
     course = forms.ChoiceField(choices=COURSE, required=True, widget=forms.Select(attrs={"class": "form-control", "placeholder": "Select"}),label="Course")
     entry_scheme = forms.ChoiceField(choices=SCHEME, required=True, widget=forms.Select(attrs={"class": "form-control", "placeholder": "Select"}),label="Entry Scheme")
     intake = forms.ChoiceField(choices=INTAKE, required=True, widget=forms.Select(attrs={"class": "form-control", "placeholder": "Select"}),label="Intake")
-    sponsor = forms.ChoiceField(choices=SPONSOR, required=True, widget=forms.Select(attrs={"class": "form-control", "placeholder": "Select"}),label="Sponsor")
+    sponsorship = forms.ChoiceField(choices=SPONSOR, required=True, widget=forms.Select(attrs={"class": "form-control", "placeholder": "Select"}),label="Sponsor")
     gender = forms.ChoiceField(choices=GENDER_CHOICES, widget=forms.RadioSelect(attrs={"class": "form-control", "placeholder": "",}),label="Gender")
     birth_date = forms.CharField( required=True , widget=forms.widgets.TextInput(attrs={"placeholder":" YYYY/MM/DD", "class":"form-control"}), label="Date of Birth",)
     residence = forms.CharField( required=True , widget=forms.widgets.TextInput(attrs={"placeholder":" ", "class":"form-control"}), label="" )
