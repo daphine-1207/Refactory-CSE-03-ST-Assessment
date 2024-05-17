@@ -2,15 +2,18 @@ const router = require('express').Router();
 const Student = require('../models/StudentForm');
 const path = require('path');
 
+let message = '';
+
 // get route
 router.get('/', (req, res) => {
-    res.render(path.join(__dirname, '../views/form'), { message : req.message});
+    console.log(message)
+    res.render(path.join(__dirname, '../views/form'), { message });
 })
 
 // Post route
 router.post('/', async (req, res) => {
     try{
-        if(!req.body){
+        if(req.body !== null ){
             // Destruct the req.body object for the form data
             const { firstName, lastName, course, entryScheme, intake, sponsorship, gender, dateOfBirth, residence } = req.body;
 
@@ -35,7 +38,7 @@ router.post('/', async (req, res) => {
     }catch (err) {
         res.json({message: err});
     }
-    req.message = 'Form has been submitted successfully';
+    message = 'Form has been submitted successfully';
     res.redirect('/');
 })
 

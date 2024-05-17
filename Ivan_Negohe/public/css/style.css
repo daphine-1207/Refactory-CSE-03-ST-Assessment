@@ -1,0 +1,39 @@
+body{
+    color: #0C5F52;
+    font-family: Agency FB;
+    font-weight: 800;
+}
+
+.form-control, .form-select{
+    border-color: #0C5F52;
+    border-radius: 0;
+}
+
+.form-check-input{
+    border-color: #0C5F52;
+    accent-color:  #0C5F52;
+}
+
+.btn{
+    background-color: #0C5F52;
+    border: none;
+}
+
+#gender{
+    border: 1px solid #0C5F52;
+    padding: 6px 6px;
+    margin: 0px 0.5px;
+}
+
+.logo-image{
+    position:absolute;
+    inset: 0;
+    display: block;
+    -o-object-fit: cover;
+    object-fit: cover;
+    height: auto;
+    width:50%;
+}
+#logo{
+    height:100vh;
+}
