@@ -1,0 +1,66 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Student Registration Form
+  link(rel='stylesheet' href='/form.css')
+.container
+  h1 STUDENT APPLICATION FORM
+  form#studentForm(action='/form' method='POST')
+    hr
+    .form-container
+      img(src='/1. Form on load.PNG' alt='School Badge')
+      .form
+        .form-group
+          label(for='firstName') First Name
+          input#firstName.form-control(type='text' name='firstName')
+        .form-group
+          label(for='lastName') Last Name
+          input#lastName.form-control(type='text' name='lastName')
+        .form-group
+          label(for='course') Course
+          select#course.form-control(name='course')
+            option(value='') Select course
+            option(value='Computer Science') Computer Science
+            option(value='Engineering') Engineering
+            option(value='Business') Business
+        .form-group
+          label(for='entrySchema') Entry Scheme
+          select#entrySchema.form-control(name='entrySchema')
+            option(value='') Select entry scheme
+            option(value='Direct Entry') Direct Entry
+            option(value='Foundation Programme') Foundation Programme
+            option(value='Transfer') Transfer
+        .form-group
+          label(for='intake') Intake
+          select#intake.form-control(name='intake')
+            option(value='') Select intake
+            option(value='January') January
+            option(value='May') May
+            option(value='September') September
+        .form-group
+          label(for='sponsorship') Sponsorship
+          select#sponsorship.form-control(name='sponsorship')
+            option(value='') Select sponsorship
+            option(value='Self-sponsored') Self-sponsored
+            option(value='Government-sponsored') Government-sponsored
+            option(value='Corporate-sponsored') Corporate-sponsored
+        .form-group
+          label Gender
+          br
+          .form-check.form-check-inline
+            input#male.form-check-input(type='radio' name='gender' value='Male')
+            label.form-check-label(for='male') Male
+          .form-check.form-check-inline
+            input#female.form-check-input(type='radio' name='gender' value='Female')
+            label.form-check-label(for='female') Female
+        .form-group
+          label(for='dob') Date of Birth
+          br
+          input#dob.form-control(type='date' name='dob')
+        .form-group
+          label(for='residence') Residence
+          br
+          input#residence.form-control(type='text' name='residence')
+        button.btn.btn-primary(type='submit') Submit
+script(src='/form.js')
