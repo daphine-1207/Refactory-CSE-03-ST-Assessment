@@ -1,0 +1,200 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Register</title>
+    <style>
+        form-section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            bottom: -5px;
+            border-bottom: 1px solid #000;
+        }
+
+       
+        input[type="text"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border-radius: 0px;
+            border: 1px solid #ccc;
+        }
+
+        button[type="submit"] {
+            display: block;
+            width: 50%;
+            padding: 10px;
+            background-color: rgb(217, 92, 15);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: auto;  
+        }
+
+        button[type="submit"]:hover {
+            background-color: rgb(217, 92, 15);
+        }
+
+        .column {
+            flex: 0 0 45%;
+            text-align: justify;
+        }
+
+        h1 {
+            
+            color: green;
+            padding: 10px;
+        }
+
+        
+        form.register input {
+            border: 2px solid #ccc;  
+        }
+ 
+        form.register input:valid {
+            border: 2px solid green;  
+        }
+
+         
+        form.register input:focus {
+            border: 2px solid red; 
+        }
+
+        form.register select {
+            border: 2px solid #ccc; 
+        }
+
+        
+        form.register select:valid {
+            border: 2px solid green;  
+        }
+
+         
+        form.register select:focus {
+            border: 2px solid red;  
+        }
+        form.register radio{
+            display: flex;
+            align-items: center;
+            border: solid 10px green;
+        }
+        .form {
+             
+            margin-left: auto;
+            margin-right: auto;
+            font-style:Agency FB ;
+            
+        }
+
+        .messages {
+            color: black;
+            background-color: green;
+            padding: 10px;
+        }
+
+        .registe li {
+            text-decoration: none;
+        }
+
+        .form-group {
+            margin-bottom: 1em;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+
+        .form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .form-group {
+            flex: 1;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            border: solid 1px green;
+            
+        }
+
+        .form {
+            width: 60%;
+        
+        }
+
+        .form-register {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            flex: 1;
+        }
+
+         
+ 
+
+        .image-container img {
+            max-width: 100%; 
+            height: auto;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div style="margin-top: 0px;" class="image-container">
+    <img style="margin-top: 0px; height:850px" src="{% static 'images/1. Form on load.PNG' %}">
+</div >
+     
+        <div class="form">
+      <form class="register" method="post">
+     
+        <center>
+            <h1>STUDENT APPLICATION FORM</h1>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </center>
+       <div class="janet">
+            {% csrf_token %}
+            {{form.as_p}}
+            {% if form.as_p.errors %}
+            <span class="error">{{ form.as_p.errors }}</span>
+        {% endif %}
+</div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    </div>
+    
+</div>
+</div>
+</body>
+</html>
