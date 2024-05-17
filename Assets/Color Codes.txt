@@ -1,0 +1,14 @@
+CIU deep green:
+* RGB(12, 95, 82)
+* HEX #0C5F52
+* HSL (120, 198, 54)
+
+Red color for errors:
+* RGB(255, 0, 0)
+* HEX #FF0000
+* HSL(0, 255, 128)
+
+Green color for success:
+* RGB(0, 176, 80)
+* HEX #00B050
+* HSL(104, 255, 88)
