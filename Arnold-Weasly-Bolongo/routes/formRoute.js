@@ -3,7 +3,7 @@ const router = express.Router();
 const moment = require('moment');
 
 //importing model
- const FormModel = require("./../models/formModule");
+ const FormModel = require("../models/formModel");
 
  
 
@@ -14,19 +14,20 @@ const moment = require('moment');
 
 
 //  //post form route
- router.get("/form", async (req, res) => {
-   try {
-    const field = await FormModel.find();
-      await field.save();
+router.post("/form",  async(req, res)=> {
+  try {  
+     const field = new FormModel(req.body);
+     console.log(field);
+     await field.save();
+     
+        res.redirect("/form");
 
-      res.redirect("/dataForm");
-    
-   } catch (error) {
-    res.status(400).send("Sorry something wrong!");
-      console.log("error registering field...", error );
-    
-   }
- });
+  } catch (error) {
+     res.status(400).send("Sorry something wrong!");
+     console.log("error registering field...", error );
+  }
+});
+
 
 
  module.exports = router;

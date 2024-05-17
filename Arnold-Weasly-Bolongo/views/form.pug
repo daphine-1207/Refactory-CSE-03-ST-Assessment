@@ -12,12 +12,12 @@ head
         img( src='/images/Form.PNG' alt='')
     .right-side
       h2.text-center.text-success.mb-4 STUDENT APPLICATION FORM
-      form#studentForm(action='/form' method='' onsubmit='return validation(event)' name='validationForm')
+      form#studentForm(action='/form' method='POST' onsubmit='return validation(event)' name='validationForm')
         .mb-3
           .row
             .col
               label.form-label(for='firstName') First Name
-              input#firstName.form-control(type='text' placeholder='First Name')
+              input#firstName.form-control(type='text' name='firstName' placeholder='First Name')
               small#firstNameError
               p
               label.form-label(for='course') Course
@@ -31,7 +31,7 @@ head
               small#courseError
             .col
               label.form-label(for='lastName') Last Name
-              input#lastName.form-control(type='text' placeholder='Last Name')
+              input#lastName.form-control(type='text' placeholder='Last Name' name='lastName')
               p
               label.form-label(for='entryScheme') Entry Scheme
               select#entryScheme.form-control(name='entryScheme' required='')
@@ -73,12 +73,12 @@ head
         .mb-3
           .row
             .col
-              label.form-label(for='date') Date Of Birth
-              input#date.form-control(type='date' placeholder='(YYYY/MM/DD)' required='')
+              label.form-label(for='dob') Date Of Birth
+              input#dob.form-control(type='date' placeholder='(YYYY/MM/DD)' name='dob'  required='')
               small#dobError
             .col
               label.form-label(for='residence') Residence
-              input#residence.form-control(type='text' placeholder='Residence' required='')
+              input#residence.form-control(type='text' name='residence' placeholder='Residence' required='')
               small#residenceError
         .text-end
           button.btn.btn-success.btn-lg(type='submit') Submit

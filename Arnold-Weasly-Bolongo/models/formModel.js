@@ -24,7 +24,7 @@ const formSchema = new mongoose.Schema({
     },
     entryScheme:{
         type: String, 
-        unique: true
+        trim: true
     },
     residence:{
         type: String, 
@@ -35,7 +35,7 @@ const formSchema = new mongoose.Schema({
         trim: true
     },
     sponsorship:{
-        type: Number, 
+        type: String, 
         trim: true
     }
 });
