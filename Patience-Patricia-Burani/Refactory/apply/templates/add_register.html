@@ -1,0 +1,275 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+               form-section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            bottom: -5px;
+            border-bottom: 1px solid #000;
+        }
+
+       
+        input[type="text"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border-radius: 0px;
+            border: 1px solid #ccc;
+        }
+
+        button[type="submit"] {
+            display: block;
+            width: 50%;
+            padding: 10px;
+            background-color: rgb(217, 92, 15);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: auto;  
+        }
+
+        button[type="submit"]:hover {
+            background-color: rgb(217, 92, 15);
+        }
+
+        .column {
+            flex: 0 0 45%;
+            text-align: justify;
+        }
+
+        h1 {
+            
+            color: green;
+            padding: 10px;
+        }
+
+        
+        form.register input {
+            border: 2px solid #ccc;  
+        }
+ 
+        form.register input:valid {
+            border: 2px solid green;  
+        }
+
+         
+        form.register input:focus {
+            border: 2px solid red; 
+        }
+
+        form.register select {
+            border: 2px solid #ccc; 
+        }
+
+        
+        form.register select:valid {
+            border: 2px solid green;  
+        }
+
+         
+        form.register select:focus {
+            border: 2px solid red;  
+        }
+        form.register radio{
+            display: flex;
+            align-items: center;
+            border: solid 10px green;
+        }
+        .form {
+             
+            margin-left: auto;
+            margin-right: auto;
+            font-style:Agency FB ;
+            
+        }
+
+        .messages {
+            color: black;
+            background-color: green;
+            padding: 10px;
+        }
+
+        .registe li {
+            text-decoration: none;
+        }
+
+        .form-group {
+            margin-bottom: 1em;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+
+        .form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .form-group {
+            flex: 1;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border: solid 1px green;
+            margin-bottom: 30px;
+            
+        }
+
+        .form {
+            width: 50%;
+        
+        }
+
+        .form-register {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            flex: 1;
+        }
+
+         
+ 
+
+        .image-container img {
+            max-width: 100%; 
+            height: auto;
+        }
+        .error {
+            color: red;
+        }
+        .janet input{
+            margin-bottom: 1px; 
+            gap: 5px;
+             display:flex; 
+            flex-direction: row; 
+        }
+         
+        .form-field {
+            display: inline-block;
+            width: 45%;
+            margin: 10px;
+            font-style: Agency FB;
+        }
+       
+     
+
+        select {
+            text-align: center;
+            width: 100%;
+        }
+        section{
+            margin-top: 60px;
+            border: solid 1px #0C5F52;
+        }
+        img{
+            margin-left: -14.5px;
+        }
+        .btn{background-color: #0C5F52;
+            color: #fff;
+        margin-left: 350px;
+        padding-left: 60px;
+    padding-right: 60px;}
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img style="height: 750px;" src="{% static 'images/1. Form on load.PNG' %}" alt="badge" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h1 style="text-align:center; color:#0C5F52;">STUDENT APPLICATION FORM</h1>
+                <center>
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </center>
+    
+                
+        
+                <form class="register" method="post">
+                    {% csrf_token %}
+                    <div class="form-field">
+                        <label for="id_first_name">First Name:</label>
+                        {{ form.first_name }}
+                    </div>
+                    <div class="form-field">
+                        <label for="id_last_name">Last Name:</label>
+                        {{ form.last_name }}
+                    </div>
+                    <div class="form-field">
+                        <label for="id_course">Course:</label>
+                        {{ form.course }}
+                    </div>
+                    <div class="form-field">
+                        <label for="id_entry_scheme">Entry Scheme:</label>
+                        {{ form.entry_scheme }}
+                    </div>
+                    <div class="form-field">
+                        <label for="id_intake">Intake:</label>
+                        {{ form.intake }}
+                    </div>
+                    <div class="form-field">
+                        <label for="id_sponsorship">Sponsorship:</label>
+                        {{ form.sponsorship }}
+                    </div>
+                    
+                        <label for="id_gender">Gender:</label>
+                        {{ form.gender }}
+                        <br><br>
+                        <br>
+                        <br>
+                    
+                    <div class="form-field">
+                        <label for="id_date_of_birth">Date of Birth:</label>
+                        {{ form.birth_date }}
+                    </div>
+                    <div class="form-field">
+                        <label for="id_residence">Residence:</label>
+                        {{ form.residence }}
+                    </div>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
