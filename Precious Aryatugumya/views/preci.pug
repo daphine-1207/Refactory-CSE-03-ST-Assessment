@@ -1,0 +1,81 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title STUDENT APPLICATION FORM
+  link(rel='stylesheet' href='/css/preci.css')
+.main-container
+  img.form-image(src='/Images/1. Form on load.PNG on load' alt='Form Image')
+.container
+  form#registrationForm(action="/registerstudent" method="POST")
+    .form-row
+      div
+        label(for='firstName') First name
+        input#firstName(type='text' name='firstName')
+        span#firstNameError.error fill in name!
+      div
+        label(for='lastName') Last name
+        input#lastName(type='text' name='lastName')
+        span#lastNameError.error fill in name!
+    .form-row
+      div
+        label(for='course') Course
+        select#course(name='course')
+          option(value='') -select-
+          option(value='Course1') Certificate in Healty Science
+          option(value='Course2') Certificate in Applied Technology
+          option(value='Course2') Bachelor of Information Technology
+          option(value='Course2') Bachelor in Business Technology
+          option(value='Course2') Master of Public Health
+        span#courseError.error Please select a valid state.
+      div
+        label(for='entryScheme') Entry Scheme
+        select#entryScheme(name='entryScheme')
+          option(value='') -select-
+          option(value='Scheme1') A-Level certificate
+          option(value='Scheme2') Adult/Mature Learning
+          option(value='Scheme2') Certificate
+          option(value='Scheme2') Diploma
+          option(value='Scheme2') Bachelors
+        span#entrySchemeError.error Please select a valid state.
+    .form-row
+      div
+        label(for='intake') Intake
+        select#intake(name='intake')
+          option(value='') -select-
+          option(value='Intake1') January Intake
+          option(value='Intake2') May Intake
+          option(value='Intake2') August Intake
+        span#intakeError.error Please select a valid state.
+      div
+        label(for='sponsorship') Sponsorship
+        select#sponsorship(name='sponsorship')
+          option(value='') -select-
+          option(value='Sponsor1') Private
+          option(value='Sponsor2') Government
+          option(value='Sponsor2') Bursary
+        span#sponsorshipError.error Please select a valid state.
+    .form-row
+      div
+        label(for='gender') Gender
+        select#gender(name='gender')
+          option(value='') -select-
+          option(value='Male') Male
+          option(value='Female') Female
+        span#genderError.error Please select a valid state.
+      div
+        label(for='dob') Date of Birth
+        input#dob(type='date' name='dob')
+        span#dobError.error Please provide a valid date.
+    .form-row
+      div
+        label(for='residence') Residence
+        input#residence(type='text' name='residence')
+        span#residenceError.error Please provide a valid zip.
+    .form-row.terms
+      input#agreeTerms(type='checkbox' name='agreeTerms')
+      label(for='agreeTerms') Agree to terms and conditions
+      span#agreeTermsError.error You must agree before submitting.
+    button(type='submit') Submit
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/js/preci.js"></script>
