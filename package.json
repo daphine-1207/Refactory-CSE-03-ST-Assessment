@@ -1,0 +1,21 @@
+{
+  "name": "refactory-cse-03-st-assessment",
+  "version": "1.0.0",
+  "description": "REFACTORY - CERTIFICATE IN SOFTWARE ENGINEERING - 03 - SUMMATIVE TECHNICAL ASSESSMENT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body": "^5.1.0",
+    "express": "^4.19.2",
+    "modules": "^0.4.0",
+    "mongoose": "^8.3.5",
+    "node": "^22.2.0",
+    "nodemon": "^3.1.0",
+    "parser": "^0.1.4",
+    "passport": "^0.7.0"
+  }
+}

@@ -1,0 +1,66 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Application Form
+  link(rel='stylesheet' href='/css/bootstrap-5.3.3-dist/css/bootstrap.css')
+  link(rel='stylesheet' href='/css/applicationForm.css')
+.mainFormContainer.container
+  .logoContainer
+    img(src='/Assets/Images/1. Form on load.PNG')
+  .formContainer
+    h2.form-title STUDENT APPLICATION FORM
+    form.row.g-3.appForm(action='/registerStudent' method='POST' onsubmit='return validation(event)')
+      .col-md-6
+        label.form-label First Name
+        input#firstName.form-control(type='text' name='firstName')
+        small.fullnameError
+      .col-md-6
+        label.form-label Last Name
+        input#inputPassword4.form-control(type='text' name='lastName')
+      .col-6
+        label.form-label(for='inputAddress') Course
+        select#inputState.form-select(name='course')
+          option(selected='') --Select--
+          option ...
+      .col-6
+        label.form-label(for='inputAddress2') Entry Scheme
+        select#inputState.form-select(name='entryScheme')
+          option(selected='') --Select--
+          option 
+      .col-md-6
+        label.form-label(for='inputCity') Intake
+        select#inputState.form-select(name='intake')
+          option(selected='') --Select--
+          option ...
+      .col-md-6
+        label.form-label(for='inputState') Sponsorship
+        select#inputState.form-select(name='sponsorship')
+          option(selected='') --Select--
+          option ...
+      div
+        label Gender
+        .col-md-12.radio-btn-container
+          .form-check
+            input#flexRadioDefault1.form-check-input(type='radio' name='flexRadioDefault')
+            label.form-check-label(for='flexRadioDefault1')
+              | Male
+          .form-check
+            input#flexRadioDefault2.form-check-input(type='radio' name='flexRadioDefault' checked='')
+            label.form-check-label(for='flexRadioDefault2')
+              | Female
+      //
+        <div class="col-md-12">
+        <label for="inputZip" class="form-label">Zip</label>
+        <input type="text" class="form-control" id="inputZip">
+        </div>
+      .col-md-6
+        label.form-label(for='inputCity') Date of Birth
+        input#inputCity.form-control(type='text' name='dateOfBirth')
+      .col-md-6
+        label.form-label(for='inputState') Residence
+        input#inputCity.form-control(type='text' name='residence')
+      .col-12
+        button.btn.btn-primary(type='submit') SUBMIT
+script(src='/css/bootstrap-5.3.3-dist/js/bootstrap.bundle.js')
+script(src='/js/applicationForm.js')

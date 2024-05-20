@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .form-field{
+            font-family:Arial, Helvetica, sans-serif;
+            color: #0C5F52;
+        }
+        .form-field {
+            display: inline-block;
+            width: 45%;
+            margin: 10px;
+        }
+        .form-field input:valid{
+            border: 2px solid green;
+        }
+        .form-field input:invalid{
+            border: 2px solid red;
+        }
+        .form-field select:invalid{
+            border: 1 px solid red;
+        }
+        .form-field select:valid{
+            border: 2px solid green;
+        }
+        .form-field.a{
+            display:flex;
+            display: inline-block;
+        }
+        .form-field.a input[type="radio"]{
+            margin: right 5px;
+        }
+     
+
+        select {
+            text-align: center;
+            width: 100%;
+        }
+        select {
+            /* Remove default arrow */
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        section{
+            margin-top: 60px;
+            border: solid 1px #0C5F52;
+        }
+        img{
+            margin-left: -14.5px;
+        }
+        .btn{background-color: #0C5F52;
+            color: #fff;
+        margin-left: 350px;
+        padding-left: 60px;
+    padding-right: 60px;}
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{% static 'images/1. Form on load.PNG' %}" alt="badge" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h1 style="text-align:center; color:#0C5F52; font-family: Agency FB, Tahoma, Calibri">STUDENT APPLICATION FORM</h1>
+
+                {% if success == True %}
+                <h1 style="text-align:center; background-color: #00B050; color:white;">Your form has been submitted successfully</h1>
+                {% endif %}
+                {% if field.field.required %}
+                <span class="required">*</span>
+                {% endif %}
+        
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-field">
+                        <label for="id_first_name">First Name:</label>
+                        {{ form.first_name }}
+                    </div>
+                    <div class="form-field">
+                        <label for="id_last_name">Last Name:</label>
+                        {{ form.last_name }}
+                    </div>
+                    <div class="form-field">
+                        <label for="id_course">Course:</label>
+                        {{ form.course }}
+                    </div>
+                    <div class="form-field">
+                        <label for="id_entry_scheme">Entry Scheme:</label>
+                        {{ form.entry_scheme }}
+                    </div>
+                    <div class="form-field">
+                        <label for="id_intake">Intake:</label>
+                        {{ form.intake }}
+                    </div>
+                    <div class="form-field">
+                        <label for="id_sponsorship">Sponsorship:</label>
+                        {{ form.sponsorship }}
+                    </div>
+                    <div class="form-field a">
+                        <label for="id_gender">Gender:</label>
+                        {{ form.gender }}
+                    </div>
+                    <div class="form-field">
+                        <label for="id_date_of_birth">Date of Birth:</label>
+                        {{ form.date_of_birth }}
+                        {% if form.date_of_birth.errors %}
+                            <ul class="errors">
+                                {% for error in form.date_of_birth.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                    
+                
+                    <div class="form-field">
+                        <label for="id_residence">Residence:</label>
+                        {{ form.residence }}
+                    </div>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

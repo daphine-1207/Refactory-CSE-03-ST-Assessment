@@ -1,0 +1,23 @@
+
+.container{
+    font-family: Agency FB, Tahoma, Arial, Calibri, sans-serif;
+}
+.split-container {
+    display: flex;
+    border: 1px solid green;
+}
+.left-side, .right-side {
+    flex: 1;
+    padding: 20px;
+}
+.left-side img {
+    max-width: 100%;
+    height: auto;
+}
+
+.is-invalid {
+    border-color: red;
+}
+.is-valid {
+    border-color: green;
+}

@@ -1,4 +1,7 @@
+
 # Logs
+myenv/
+
 logs
 *.log
 npm-debug.log*
@@ -127,5 +130,12 @@ dist
 .yarn/unplugged
 .yarn/build-state.yml
 .yarn/install-state.gz
+<<<<<<< main
 
 .venv/
+=======
+.pnp.*
+
+fortress/
+.vscode/
+>>>>>>> main

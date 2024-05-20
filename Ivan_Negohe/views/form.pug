@@ -1,0 +1,89 @@
+meta(charset='utf-8')
+meta(name='viewport' content='width=device-width, initial-scale=1')
+title Student Form 
+link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css", integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN", crossorigin="anonymous")
+link(rel='stylesheet' href='/css/style.css')
+
+body
+    .container-fluid
+        .row 
+            .col-6#logo
+                img.logo-image(src='/images/1. Form on load.PNG')
+            .col-6 
+                .row 
+                    .col-12.text-center
+                        h1 
+                            b STUDENT APPLICATION FORM 
+                    .col 
+                        form#form(action='/' method='POST')
+                            .row
+                                .col-12#message.text-center.text-light(style='background-color:#00B050; padding: 8px 0px; margin: 0px 0.5px;')
+                                    b= message
+                                .col-6.mb-3
+                                    label.form-label First Name
+                                    input.form-control(name='firstName' type='text')
+                                    .message
+                                .col-6.mb-3
+                                    label.form-label Last Name
+                                    input.form-control(name='lastName' type='text')
+                                    .message
+                                .col-6.mb-3
+                                    label.form-label Course
+                                    select.form-select.text-center(aria-label="Default select example" name='course')
+                                        option(value='' selected) -- Select --
+                                        option(value='Certificate in Health Science') Certificate in Health Science
+                                        option(value='Certificate in Applied Technology') Certificate in Applied Technology
+                                        option(value='Bachelor of information Technology') Bachelor of information Technology
+                                        option(value='Bachelors in Buisness Technology') Bachelors in Buisness Technology
+                                        option(value='Master of Public Health') Master of Public Health
+                                    .message
+                                .col-6.mb-3
+                                    label.form-label Entry Scheme
+                                    select.form-select.text-center(aria-label="Default select example" name='entryScheme')
+                                        option(value='' selected) -- Select --
+                                        option(value='A-Level certificate') A-Level certificate
+                                        option(value='Adult/Mature Learning') Adult/Mature Learning
+                                        option(value='Certificate') Certificate
+                                        option(value='Diploma') Diploma
+                                        option(value='Bachelors') Bachelors
+                                    .message
+                                .col-6.mb-3
+                                    label.form-label intake
+                                    select.form-select.text-center(aria-label="Default select example" name='intake')
+                                        option(value='' selected) -- Select --
+                                        option(value='January Intake') January Intake
+                                        option(value='May Intake') May Intake
+                                        option(value='August Intake') August Intake
+                                    .message
+                                .col-6.mb-3
+                                    label.form-label Sponsorship
+                                    select.form-select.text-center(aria-label="Default select example" name='sponsorship')
+                                        option(value='' selected) -- Select --
+                                        option(value='Private') Private
+                                        option(value='Government') Government
+                                        option(value='Bursary') Bursary
+                                    .message
+                                .col-12.mb-3
+                                    label.form-label Gender
+                                    .row#gender
+                                        .col
+                                            input.form-check-input.me-3(type="radio" value="Male" name='gender' id="check1")
+                                            label.form-check-label Male
+                                        .col
+                                            input.form-check-input.me-3(type="radio" value="Female" name='gender' id="check2")
+                                            label.form-check-label Female
+                                .col-6.mb-3
+                                    label.form-label Date of birth
+                                    input.form-control(name='dateOfBirth' type='date' max='2006-01-01' )
+                                    .message
+                                .col-6.mb-3
+                                    label.form-label Residence
+                                    input.form-control(name='residence' type='text')
+                                    .message
+                            .row.justify-content-end
+                                .col-6.mb-3
+                                    button.btn.btn-primary.w-100.rounded-0(type='submit') SUBMIT
+
+
+    script(src='/js/form.js')
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js", integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+", crossorigin="anonymous")

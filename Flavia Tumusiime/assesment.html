@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Flavia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* Add custom styling here if needed */
+        .img-fluid {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Left Column for Image -->
+        <div class="col-md-6 p-0">
+            <img src="VS6kGmbB_400x400.jpg" alt="logo" class="img-fluid">
+        </div>
+        <!-- Right Column for Form -->
+        <div class="col-md-6">
+            <div class="p-5">
+                <h2>STUDENT APPLICATION FORM</h2>
+                <form id="flavia-form">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="first-name">First name</label>
+                                <input type="text" id="first-name" name="first-name" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="last-name">Last name</label>
+                                <input type="text" id="last-name" name="last-name" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="course">Course</label>
+                        <select id="course" name="course" class="form-control">
+                            <option value="" disabled selected>--- Select ---</option>
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                            <option value="option4">Option 4</option>
+                        </select>
+                    </div>
+                      <div class="col-md-6">
+                        <label for="entry-scheme">Entry Scheme</label>
+                        <select id="entry-scheme" name="entry-scheme" class="form-control">
+                            <option value="" disabled selected>--- Select ---</option>
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                            <option value="option4">Option 4</option>
+                        </select>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-md-6">
+                        <label for="intake">Intake</label>
+                        <select id="intake" name="intake" class="form-control">
+                            <option value="" disabled selected>--- Select ---</option>
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                            <option value="option4">Option 4</option>
+                        </select>
+                    </div>
+                      <div class="col-md-6">
+                        <label for="sponsorship">Sponsorship</label>
+                        <select id="sponsorship" name="sponsorship" class="form-control">
+                            <option value="" disabled selected>--- Select ---</option>
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                            <option value="option4">Option 4</option>
+                        </select>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-md-6">
+                        <label>Gender</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="male" name="gender" value="male">
+                            <label class="form-check-label" for="male">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="female" name="gender" value="female">
+                            <label class="form-check-label" for="female">Female</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="dob">Date of Birth</label>
+                        <input type="text" id="dob" name="dob" class="form-control" placeholder="(YYYY/MM/DD)">
+                    </div>
+                    <div class="form-group">
+                        <label for="residence">Residence</label>
+                        <input type="text" id="residence" name="residence" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/assesment.js"></script>
+</body>
+</html>

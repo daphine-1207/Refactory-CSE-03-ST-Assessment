@@ -1,0 +1,89 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Student App Form
+  // Bootstrap CSS
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet')
+  link(rel='stylesheet' href='/css/form.css')
+.container.mt-5
+  .split-container
+    .left-side
+        img( src='/images/Form.PNG' alt='')
+    .right-side
+      h2.text-center.text-success.mb-4 STUDENT APPLICATION FORM
+      form#studentForm(action='/form' method='POST' onsubmit='return validation(event)' name='validationForm')
+        .mb-3
+          .row
+            .col
+              label.form-label(for='firstName') First Name
+              input#firstName.form-control(type='text' name='firstName' placeholder='First Name')
+              small#firstNameError
+              p
+              label.form-label(for='course') Course
+              select#course.form-control(name='course' required='')
+                option(value='') Select
+                option(value='male') Bachelor of Information Technology
+                option(value='male') Cetificate in Health Science
+                option(value='male') Certificate in Applied Technology
+                option(value='male') Bachelors in Business Technology
+                option(value='male') Master of Public Health
+              small#courseError
+            .col
+              label.form-label(for='lastName') Last Name
+              input#lastName.form-control(type='text' placeholder='Last Name' name='lastName')
+              p
+              label.form-label(for='entryScheme') Entry Scheme
+              select#entryScheme.form-control(name='entryScheme' required='')
+                option(value='') Select
+                option(value='male') A-Level certificate
+                option(value='male') Adult/Mature Learning
+                option(value='male') Certificate
+                option(value='male') Diploma
+                option(value='male') Bachelors
+                small#entrySchemeError
+        .mb-3
+          .row
+            .col
+              label.form-label(for='intake') Intake
+              select#intake.form-control(name='intake' required='')
+                option(value='') Select
+                option(value='male') January Intake
+                option(value='male') May Intake
+                option(value='male') August Intake
+                small#intakeError
+            .col
+              label.form-label(for='sponsorship') Sponsorship
+              select#sponsorship.form-control(name='sponsorship' required='')
+                option(value='') Select
+                option(value='male') Private
+                option(value='male') Government
+                option(value='male') Bursary
+                small#sponsorshipError
+
+          p
+          label.form-label(for='gender') Gender
+          .form-check.form-control.form-check-inline
+            input#male.form-check-input(type='radio' name='gender' value='male' required='')
+            label.form-check-label(for='male') Male
+          .form-check.form-control.form-check-inline
+            input#female.form-check-input(type='radio' name='gender' value='female')
+            label.form-check-label(for='female') Female
+            small#genderError
+        .mb-3
+          .row
+            .col
+              label.form-label(for='dob') Date Of Birth
+              input#dob.form-control(type='date' placeholder='(YYYY/MM/DD)' name='dob'  required='')
+              small#dobError
+            .col
+              label.form-label(for='residence') Residence
+              input#residence.form-control(type='text' name='residence' placeholder='Residence' required='')
+              small#residenceError
+        .text-end
+          button.btn.btn-success.btn-lg(type='submit') Submit
+      #alertPlaceholder
+// Bootstrap JS (optional)
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js')
+script(src='/js/form.js')
+script(src='/js/studentForm.js')

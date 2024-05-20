@@ -1,0 +1,10 @@
+models:
+    first_name
+    last_name
+    course==select
+    entry_scheme==select
+    intake==select
+    sponsorship==select
+    gender==display/select
+    date_of_birth==date
+    residence==textfield
