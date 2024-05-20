@@ -1,0 +1,24 @@
+
+.btn {
+    background: RGB(12, 95, 82);
+    border-radius: 0%;
+    border: RGB(12, 95, 82);
+    margin-top: 10px;
+    width: 49%;
+}
+.form-select {
+    border-radius: 0%;
+    border-color: RGB(12, 95, 82);
+    border: 2px solid RGB(12, 95, 82);
+}
+
+.form-control {
+    border-radius: 0%;
+    border-color: RGB(12, 95, 82);
+    border: 2px solid RGB(12, 95, 82);
+}
+
+.card-body {
+    margin: auto;
+    color:RGB(12, 95, 82)
+}
