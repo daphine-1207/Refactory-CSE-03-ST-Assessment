@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="../public/form.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>STUDENT APPLICATION FORM</h1>
+        <form id="studentForm" action="" method="POST">
+            <hr>
+            <div class="form-container">
+                <img src="../public/1. Form on load.PNG" alt="School Badge">
+                <div class="form">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input id="firstName" class="form-control" type="text" name="firstName">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input id="lastName" class="form-control" type="text" name="lastName">
+                    </div>
+                    <div class="form-group">
+                        <label for="course">Course</label>
+                        <select id="course" class="form-control" name="course">
+                            <option value="">Select course</option>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="Business">Business</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="entrySchema">Entry Scheme</label>
+                        <select id="entrySchema" class="form-control" name="entrySchema">
+                            <option value="">Select entry scheme</option>
+                            <option value="Direct Entry">Direct Entry</option>
+                            <option value="Foundation Programme">Foundation Programme</option>
+                            <option value="Transfer">Transfer</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="intake">Intake</label>
+                        <select id="intake" class="form-control" name="intake">
+                            <option value="">Select intake</option>
+                            <option value="January">January</option>
+                            <option value="May">May</option>
+                            <option value="September">September</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sponsorship">Sponsorship</label>
+                        <select id="sponsorship" class="form-control" name="sponsorship">
+                            <option value="">Select sponsorship</option>
+                            <option value="Self-sponsored">Self-sponsored</option>
+                            <option value="Government-sponsored">Government-sponsored</option>
+                            <option value="Corporate-sponsored">Corporate-sponsored</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Gender</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="male" value="Male">
+                            <label class="form-check-label" for="male">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+                            <label class="form-check-label" for="female">Female</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label><br>
+                        <input id="dob" class="form-control" type="date" name="dob">
+                    </div>
+                    <div class="form-group">
+                        <label for="residence">Residence</label><br>
+                        <input id="residence" class="form-control" type="text" name="residence">
+                    </div>
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="../public/form.js"></script>
+</body>
+</html>
