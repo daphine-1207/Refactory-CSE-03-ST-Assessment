@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Application Form</title>
+    <link
+      rel="stylesheet"
+      href="/Isaac_Kalumba/public/css/bootstrap-5.3.3-dist/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/Isaac_Kalumba/public/css/applicationForm.css"
+    />
+  </head>
+  <body>
+    <div class="mainFormContainer container">
+      <div class="logoContainer">
+        <img src="/Assets/Images/1. Form on load.PNG" />
+      </div>
+      <div class="formContainer">
+        <h2 class="form-title">STUDENT APPLICATION FORM</h2>
+        <form class="row g-3 appForm">
+          <div class="col-md-6">
+            <label class="form-label">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="firstName"
+              name="firstName"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Last Name</label>
+            <input
+              type="password"
+              class="form-control"
+              id="inputPassword4"
+              name="lastName"
+            />
+          </div>
+          <div class="col-6">
+            <label for="inputAddress" class="form-label">Course</label>
+            <select id="inputState" class="form-select" name="course">
+              <option selected>Choose...</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="col-6">
+            <label for="inputAddress2" class="form-label">Entry Scheme</label>
+            <select id="inputState" class="form-select" name="entryScheme" >
+              <option selected>Choose...</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="inputCity" class="form-label">Intake</label>
+            <select id="inputState" class="form-select" name="intake">
+              <option selected>Choose...</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="inputState" class="form-label">Sponsorship</label>
+            <select id="inputState" class="form-select" name="sponsorship">
+              <option selected>Choose...</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div>
+            <label>Gender</label>
+            <div class="col-md-12 radio-btn-container">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="flexRadioDefault1"
+                />
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Default radio
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="flexRadioDefault2"
+                  checked
+                />
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Default checked radio
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-md-12">
+                  <label for="inputZip" class="form-label">Zip</label>
+                  <input type="text" class="form-control" id="inputZip">
+                </div> -->
+          <div class="col-md-6">
+            <label for="inputCity" class="form-label">Date of Birth</label>
+            <input type="text" class="form-control" id="inputCity" name="dateOfBirth"/>
+          </div>
+          <div class="col-md-6">
+            <label for="inputState" class="form-label">Residence</label>
+            <input type="text" class="form-control" id="inputCity" name="residence" />
+          </div>
+
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">SUBMIT</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="/Isaac_Kalumba/public/css/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+    <script src="/Isaac_Kalumba/public/js/applicationForm.js"></script>
+  </body>
+</html>

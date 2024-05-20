@@ -1,0 +1,38 @@
+body{
+    font-family:Agency FB,
+    Tahoma,
+    Arial,
+    Calibri ;
+}
+label{
+    color: #0C5F52;
+    font-size: 1.5rem;
+}
+input{
+    text-align: center;
+}
+
+.mainFormContainer{
+    display: flex;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border: 1px solid #0C5F52;
+  
+
+}
+.appForm{
+    padding: 1.5rem;
+}
+.radio-btn-container{
+    display: flex;
+    justify-content: space-between;
+}
+.form-title{
+    text-align: center;
+    color: #0C5F52;
+    font-weight: bold;
+}
+.btn{
+    background-color: #0C5F52;
+    color: #fff;
+}
