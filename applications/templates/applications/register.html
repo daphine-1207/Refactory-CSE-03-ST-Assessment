@@ -1,0 +1,66 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>CIU | Registration</title>
+  </head>
+  <body>
+    <div class="container" id="">
+      <div class="form mt-5">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="{% static 'images/formload.PNG' %}" width="auto" height="600" alt="" />
+          </div>
+          <div class="col-md-6">
+            <form method="POST" id="form-container">
+                {% csrf_token %}
+                <div class="row">
+                  <h5 class="text-center" style="color: #0c5f52; font-size: 5ch;">Student Application Form</h5>
+                  <div class="col-md-6">
+                    {{ form.first_name|as_crispy_field }}
+                    {{ form.course|as_crispy_field }}
+                    {{ form.intake|as_crispy_field }}
+                  </div>
+                  <div class="col-md-6">
+                    {{ form.last_name|as_crispy_field }}
+                    {{ form.entry_scheme|as_crispy_field }}
+                    {{ form.sponsorship|as_crispy_field }}
+                    
+                   
+                  </div>
+                  <div class="row">
+                     {{ form.gender|as_crispy_field }}
+                  </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        {{ form.date_of_birth|as_crispy_field }}
+                      </div>
+                      <div class="col-md-6">
+                        {{ form.residence|as_crispy_field }}
+                      </div>
+                    </div>
+                  </div>
+              <button type="submit" class="btn btn-primary mt-4" style="background: #0c5f52; border: none;">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
