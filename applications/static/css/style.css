@@ -1,0 +1,18 @@
+.form {
+    max-width: fit-content;
+    max-height: max-content;
+    border: 1px solid green;
+}
+
+#form-container {
+    margin: 0 auto;
+    width: 500px;
+    padding: 20px;
+    font-family: 'Agency FB';
+}
+
+.form-group{
+    margin-top: 1rem;
+    color: #0c5f52;
+    font-size: 3ch;
+}
